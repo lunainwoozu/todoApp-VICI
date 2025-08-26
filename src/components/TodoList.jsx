@@ -3,7 +3,7 @@ import TodoItem from "./TodoItem";
 const TodoList = ({todos, toggleCheckbox, deleteTodo, editTodo}) => {
 
   return (
-    <div className="bg-white min-h-[60vh] min-w-full p-4 rounded-t-xl">
+    <div className="bg-white min-h-[60vh] max-w-[375px] min-w-[375px] p-4 rounded-t-xl">
       <ul>
         {todos.length > 0 ? (
           todos.map(todo => (

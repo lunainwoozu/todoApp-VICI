@@ -2,9 +2,19 @@ import { useState } from "react";
 import TodoList from "./components/TodoList";
 import User from "./components/User";
 import TodoInput from "./components/TodoInput";
+import { useEffect } from "react";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    // 이전 저장된 todo 불러오거나 빈 배열을 기본으로 설정
+    const savedTodos = localStorage.getItem('todos');
+    return savedTodos ? JSON.parse(savedTodos) : []
+  });
+
+  // todo 내용이 달라질 때마다 로컬 스토리지에 저장
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+  }, [todos])
 
   // 새로운 할 일 추가
   const addTodo = (text) => {
