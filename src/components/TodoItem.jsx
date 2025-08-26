@@ -37,9 +37,9 @@ const TodoItem = ({todo, toggleCheckbox, deleteTodo, editTodo}) => {
   }
 
   return (
-    <li className="flex justify-between items-center my-2 rounded-lg">
+    <li className="flex justify-between items-center gap-2 my-2 rounded-lg">
       {/* 체크박스와 텍스트를 위한 label */}
-      <label className="flex items-center flex-1 cursor-pointer">
+      <label className="flex items-center cursor-pointer">
         <input
           type="checkbox"
           checked={todo.completed}
@@ -56,15 +56,15 @@ const TodoItem = ({todo, toggleCheckbox, deleteTodo, editTodo}) => {
 
       {/* 수정 모드 */}
       {isEditing ? (
-        <div className="flex gap-2 items-center">
+        <div className="flex flex-1 gap-2 items-center">
           <input
             ref={inputRef}
             type="text"
             value={newText}
             onChange={handleTextChange}
-            className="p-2 border rounded-md"
+            className="flex-1 px-2 py-0.5 border rounded-md"
           />
-          <div className="flex gap-1">
+          <div className="flex gap-2 items-center">
             <button onClick={handleCancel} className="">
               <X color="#999999" size={16} />
             </button>
@@ -75,7 +75,7 @@ const TodoItem = ({todo, toggleCheckbox, deleteTodo, editTodo}) => {
         </div>
       ) : (
         // 버튼 모드
-        <div className="flex gap-1 items-center">
+        <div className="flex gap-2 items-center">
           <button onClick={handleEditing} className="bg-transparent">
             <Pen color="#999999" size={16} />
           </button>

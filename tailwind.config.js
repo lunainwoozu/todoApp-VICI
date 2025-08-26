@@ -1,5 +1,5 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
+  darkMode: 'class',
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
@@ -7,4 +7,7 @@ module.exports = {
     extend: {},
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light"], // <-- 테마를 light로 고정
+  },
 };

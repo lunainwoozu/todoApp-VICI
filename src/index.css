@@ -22,7 +22,6 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background: linear-gradient(to right, #F7CAC9, #92A8D1);
-  color-scheme: light;
 }
 
 h1 {
@@ -34,23 +33,14 @@ h2 {
   font-weight: bold;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+button:not:has(.btn) {
+  background: transparent;
+  border: transparent;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 0px auto -webkit-focus-ring-color;
 }
 
 main {
