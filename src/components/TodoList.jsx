@@ -1,10 +1,11 @@
 import TodoItem from "./TodoItem";
+import TodoInput from "./TodoInput";
 
-const TodoList = ({todos, toggleCheckbox, deleteTodo, editTodo}) => {
+const TodoList = ({todos, toggleCheckbox, deleteTodo, editTodo, addTodo}) => {
 
   return (
-    <div className="bg-white min-h-[60vh] max-w-[375px] min-w-[375px] p-4 rounded-t-xl">
-      <ul>
+    <div className="relative">
+      <ul className="overflow-y-auto p-4">
         {todos.length > 0 ? (
           todos.map(todo => (
             <TodoItem key={todo.id} todo={todo}
@@ -15,6 +16,7 @@ const TodoList = ({todos, toggleCheckbox, deleteTodo, editTodo}) => {
           <p className="text-center">오늘의 할 일을 등록해 주세요!</p>
         )}
       </ul>
+      <TodoInput addTodo={addTodo} />
     </div>
   );
 }

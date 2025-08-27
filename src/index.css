@@ -22,15 +22,17 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background: linear-gradient(to right, #F7CAC9, #92A8D1);
+  scrollbar-width: thin;
 }
 
+h1,h2,h3,h4,h5{
+  font-weight: bold;
+}
 h1 {
   font-size: 3.2rem;
-  font-weight: bold;
 }
 h2 {
   font-size: 1.5rem;
-  font-weight: bold;
 }
 
 button:not:has(.btn) {

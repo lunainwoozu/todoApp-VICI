@@ -19,9 +19,13 @@ const TodoInput = ({ addTodo }) => {
     <div className="fixed w-[375px] bottom-0 bg-white p-4 rounded-t-xl shadow-xl">
       <form onSubmit={handleSubmit} className="todo-input flex gap-2">
         <label className="input">
-          <input id="todo" type="text" placeholder="오늘의 할 일은?" onChange={handleChange} required />
+          <input id="todo" type="text" placeholder="오늘의 할 일은?"
+           onChange={handleChange} value={text} required />
         </label>
-        <button type="submit" className="btn bg-linear-to-r from-pink-200 to-blue-200">등록</button>
+        <button type="submit"
+         className="btn bg-linear-to-r from-pink-200 to-blue-200">
+          등록
+        </button>
       </form>
     </div>
   );
