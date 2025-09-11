@@ -15,13 +15,13 @@ const Profile = ({user, updateUser}) => {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center h-[40vh] p-8">
-      <div className="avatar">
+    <div className="flex flex-col items-center h-[35vh] p-8">
+      <div className="relative avatar">
         <div className="w-24 rounded-full">
           <img src={user.photo} alt='프로필 이미지' />
         </div>
         <button type="button"
-         className="w-[20px] h-[20px] btn btn-circle bg-black border-0"
+         className="absolute bottom-0 right-0 w-[20px] h-[20px] btn btn-circle bg-black border-0"
          onClick={handleOpenModal}>
           <Plus color="#eee" size={16} />
         </button>

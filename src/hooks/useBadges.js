@@ -22,7 +22,7 @@ const useBadges = (todos) => {
     BADGE_LEVELS.forEach(level => {
       setBadges(prevBadges => {
         if (completedCount === level &&
-           !prevBadges.some(badge => !badge.level === level)){
+           !prevBadges.some(badge => badge.level === level)){
             const newBadge = {
               id: Date.now(),
               level: level,
@@ -36,21 +36,21 @@ const useBadges = (todos) => {
         return prevBadges
       })
     })
-  }, [todos]); // todos와 badges 상태가 변경될 때마다 실행
+  }, [todos]); // todos 상태가 변경될 때마다 실행
 
-  // 마지막 획득 배지가 있을 때만 모달을 띄우고 자동으로 닫히는 로직
+  // 획득 배지가 있을 때만 모달을 띄우고 자동으로 닫히는 로직
   useEffect(() => {
     if (lastAcquiredBadge) {
       setIsBadgeModalOpen(true);
       const timer = setTimeout(() => {
         setIsBadgeModalOpen(false);
         setLastAcquiredBadge(null); // 모달이 닫힌 후 상태 초기화
-      }, 3000);
+      }, 2000);
       return () => clearTimeout(timer);
     }
   }, [lastAcquiredBadge]);
 
-  return { badges, isBadgeModalOpen, setIsBadgeModalOpen };
+  return { badges, isBadgeModalOpen };
 };
 
 export default useBadges;
