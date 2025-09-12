@@ -3,8 +3,8 @@ import Badge from "./Badge";
 const HallOfFame = ({badges}) => {
 
   return (
-    <div className="p-4">
-      <div className="grid grid-cols-3 gap-4 bg-white p-4 rounded-t-xl">
+    <div className="p-8">
+      <div className="grid grid-cols-3 gap-4 bg-white rounded-t-xl">
         {badges.length > 0 ? (
           badges.map(badge => (
             <Badge key={badge.id} badge={badge} />

@@ -37,7 +37,7 @@ const TodoItem = ({todo, toggleCheckbox, deleteTodo, editTodo}) => {
   }
 
   return (
-    <li className="flex justify-between items-center gap-2 my-2 rounded-lg">
+    <li className="flex justify-between items-center rounded-lg">
       {/* 체크박스와 텍스트를 위한 label */}
       <label className="flex items-center cursor-pointer">
         <input

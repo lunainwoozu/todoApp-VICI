@@ -15,7 +15,7 @@ const Profile = ({user, updateUser}) => {
   }
 
   return (
-    <div className="flex flex-col items-center h-[35vh] p-8">
+    <div className="flex flex-col items-center p-8">
       <div className="relative avatar">
         <div className="w-24 rounded-full">
           <img src={user.photo} alt='프로필 이미지' />
