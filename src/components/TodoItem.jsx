@@ -1,10 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import { Pen, Trash2, X, Check } from 'lucide-react';
+import useTodoStore from "../store/todoStore";
 
-const TodoItem = ({todo, toggleCheckbox, deleteTodo, editTodo}) => {
+const TodoItem = ({todo}) => {
   const [isEditing, setIsEditing] = useState(false);
   const [newText, setNewText] = useState(todo.text);
   const inputRef = useRef(null);
+
+  const { toggleCheckbox, deleteTodo, editTodo } = useTodoStore();
 
   // 수정 상태 on/off
   const handleEditing = () => {

@@ -1,7 +1,9 @@
 import { useState } from "react";
+import useTodoStore from "../store/todoStore";
 
-const TodoInput = ({ addTodo }) => {
+const TodoInput = () => {
   const [text, setText] = useState('');
+  const {addTodo} = useTodoStore();
 
   const handleChange = (e) => {
     setText(e.target.value)
